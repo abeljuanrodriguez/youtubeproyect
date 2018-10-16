@@ -1,23 +1,37 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="js.js"></script>
-<html>
+<link rel="stylesheet" type="text/css" href="CSS.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="js.js"></script>
 <head>
   <title>Youtube Project</title>
 </head>
-
-<body>
-  <form id="search-term">
-    Entry:
-    <br>
-    <input id="query" type="text">
-    <br>
-    <input type="submit" value="Submit">
-  </form>
-  <div id="search-results">
-	
-  
-  </div>
-</body>
-
-</html>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<div class="container">
+    <br/>
+	<div class="row justify-content-center">
+		<div class="col-12 col-md-10 col-lg-8">
+			<form id="search-term" class="card card-sm">
+				<div class="card-body row no-gutters align-items-center">
+					<div class="col-auto">
+						<i class="fas fa-search h4 text-body"></i>
+					</div>
+					<!--end of col-->
+					<div class="col">
+						<input id="query" class="form-control form-control-lg form-control-borderless" type="search" placeholder="Busca tu musica favorita">
+					</div>
+					<!--end of col-->
+					<div class="col-auto">
+						<button class="btn btn-lg btn-success" type="submit">Buscar</button>
+					</div>
+					<!--end of col-->
+				</div>
+				 <div id="search-results" class="search">
+				</div>
+			</form>
+		</div>
+		<!--end of col-->
+	</div>
+</div>

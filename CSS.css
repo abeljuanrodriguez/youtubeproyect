@@ -1,0 +1,13 @@
+.form-control-borderless {
+    border: none !important;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.search {
+	margin-left:10%;
+}
