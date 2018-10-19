@@ -6,6 +6,16 @@
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
+	background-color: white !important;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+	background: url(https://image.flaticon.com/icons/svg/0/532.svg);
+    text-decoration: none;
+    color: initial;
 }
 
 .search {

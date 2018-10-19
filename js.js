@@ -1,9 +1,15 @@
 $(document).ready(function () {
-    $('#search-term').submit(function (event) {
-        event.preventDefault();
-        var searchTerm = $('#query').val();
-        getRequest(searchTerm);
-    });
+    $( "#buscar" ).click(function(event) {
+		event.preventDefault();
+		var busqueda = $('#query').val();
+		getRequest(busqueda);
+	});
+	
+	$( "#buscarLista" ).click(function(event) {
+		event.preventDefault();
+		var busqueda = $('#query').val();
+		getRequestList(busqueda);
+	});
 });
 
 function getRequest(searchTerm) {
@@ -23,11 +29,19 @@ function getRequestList(searchTerm) {
     var params = {
         part: 'snippet',
         key: 'AIzaSyDyM-6eVucAnkCzkbPysS-BxgCMhuCzhBM',
-		playlistId:'PLTC48guiTXNQNhf3fo1R3CpnZUNGw5Cyo',
+		playlistId:searchTerm,
 		maxResults: 10
     };
   
-    $.getJSON(url, params, showResults);
+    $.getJSON(url, params, downloadResults);
+}
+
+function downloadResults(results){
+	var entries = results.items;
+    
+    $.each(entries, function (index, value) {
+		window.open('http://www.convertmp3.io/fetch/?video=https://www.youtube.com/watch?v=' + value.snippet.resourceId.videoId);
+    }); 
 }
 
 function showResults(results) {
@@ -35,7 +49,7 @@ function showResults(results) {
     var entries = results.items;
     
     $.each(entries, function (index, value) {
-        html += '<div><iframe width="80%" height="20%" src="https://www.youtube.com/embed/' +value.id.videoId + '"' + '> </iframe><a href="http://www.convertmp3.io/fetch/?video=https://www.youtube.com/watch?v='+ value.id.videoId +'"target="_blank">link text</a></div>';
+        html += '<div><iframe width="550" height="300" src="https://www.youtube.com/embed/' +value.id.videoId + '"' + '> </iframe><a href="http://www.convertmp3.io/fetch/?video=https://www.youtube.com/watch?v='+ value.id.videoId +'"target="_blank">link text</a></div>';
     }); 
     
     $('#search-results').html(html);
